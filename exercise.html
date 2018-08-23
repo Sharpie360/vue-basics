@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> VueJS - Exercise 1</title>
+  <script src="vue.js"></script>
+</head>
+<body>
+  
+  <div id="exercise">
+    <p>VueJS is awesome! - {{ name }} {{ age }}</p>
+    <p>{{ timesThree(age) }}</p>
+    <p>Random Number: {{ randomNumber() }}</p>
+    <img v-bind:src="avatarUrl" alt="avatar" height="50">
+    <br>
+    <input type="text" v-bind:value="name">
+  </div>
+
+<script>
+  new Vue({
+    el: '#exercise',
+    data: {
+      name: 'Sean Becker',
+      age: 26,
+      avatarUrl: 'http://rabbitwerks.techtronixweb.com/img/svg/rabbitwerks-logo-transparent-1000px.svg'
+    },
+    methods: {
+      timesThree: function(x) {
+        return x * 3
+      },
+      randomNumber: function() {
+        return Math.round(Math.random() * 100) + 1
+      }
+    }
+  })
+</script>
+</body>
+</html>

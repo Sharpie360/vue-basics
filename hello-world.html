@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue Modules</title>
+  <script src="vue.js"></script>
+</head>
+<body>
+  
+  <div id="app">
+    <h1>{{ title }}</h1>
+    <h4>{{ subtitle }}</h4>
+    <br>
+    <input type="text" v-on:input="changeTitle" placeholder="change title by entering text">
+  </div>
+
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      title: "This is the basic hello world app.",
+      subtitle: "With input field...",
+    },
+    methods: {
+      changeTitle: function(event) {
+        this.title = event.target.value;
+      }
+    }
+  })
+</script>
+</body>
+</html>
