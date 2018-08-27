@@ -45,3 +45,6 @@
 # everything stored in computed, can be used like a data property
 #   these are functions that eval expressions beyond that of string
 #   interpolation evaluation
+    must run syncronously
+
+# Shorthands] @ for events '@click'] : for v-bind ':href' 
