@@ -16,7 +16,8 @@
 .
 # Vue Directives
 -- directives are basically instructions for vue to follow
--- v-on, v-for, v-bind, v-once, v-html, etc
+-- v-on, v-for, v-bind, v-once, v-html, etc followed by :
+-- then dependant logic
 .
 - v-once prevents re-rendering of the element, even if the value or
 - data changes elsewhere in the application
@@ -48,3 +49,26 @@
     must run syncronously
 
 # Shorthands] @ for events '@click'] : for v-bind ':href' 
+
+# Simple Toggle Logic for Boolean values
+    v-on:click="isActive = !isActive"
+    on click set true to false, or false to true
+
+# Dynamic CSS Styles with VueJS
+- start by binding to the element class, :class="" (v-bind:)
+-- static use of the class attr is okay to do, wont effect it
+-- behind the scenes vuejs merge these together
+
+-- pass in an object with condition :class="{className: true}"
+---- need to use quotes if class name contains special chars (-)
+
+# Styling with Objects 
+-- computer props function that returns an object with the prop 
+-- and the condition value, gets passed into the :class attr
+
+# Styling without Classes
+-- binding to the style attr allows for dynamic styling without the need for class names
+-- use syntax :style="{styleName: condition}"
+
+# Styling using Array Syntax
+-- :style="[{backgroundColor: color}, myStyle]"

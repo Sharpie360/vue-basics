@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue CSS Styling without Classes</title>
+  <script src="../vue.js"></script>
+  <style>
+    body {
+      background-color: #212121;
+      color: #ffffff;
+      font-family: sans-serif
+    }
+    .demo {
+      width: 100px;
+      height: 100px;
+      background-color: #006473;
+      display: inline-block;
+      margin: 10px;
+    }
+    .rw-main-green {
+      background-color: #03A9AC;
+    }
+    .rw-bright-green {
+      background-color: #00D6A4;
+    }
+    .rw-accent-teal {
+      background-color: #03D8CB;
+    }
+
+  </style>
+</head>
+
+
+<body>
+  <div id="app">
+    <div class="demo"></div>
+    <div class="demo" :style="myStyle"></div>
+    <div class="demo" :style="[{backgroundColor: color}, myStyle]"></div>
+    <div class="demo"></div>
+    <hr>
+    Color<br>
+    <input type="text" v-model="color"><br><br>
+    Width<br>
+    <input type="text" v-model="width">
+    <hr>
+    <h3>Type in a generic color name</h3>
+    <h3>...and a width size</h3>
+
+
+  </div>
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      attachColor: true,
+      color: 'rw-main-green',
+      width: 100
+    },
+    computed: {
+      myStyle: function() {
+        return {
+          backgroundColor: this.color,
+          width: this.width + 'px'
+        }
+      }
+    }
+    
+  })
+</script>
+</body>
+</html>

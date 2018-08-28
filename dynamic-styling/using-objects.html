@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue CSS Styling Using Objects</title>
+  <script src="../vue.js"></script>
+  <style>
+    body {
+      background-color: #212121;
+    }
+    .demo {
+      width: 100px;
+      height: 100px;
+      background-color: #006473;
+      display: inline-block;
+      margin: 10px;
+    }
+    .rw-main-green {
+      background-color: #03A9AC;
+    }
+    .rw-bright-green {
+      background-color: #00D6A4;
+    }
+    .rw-accent-teal {
+      background-color: #03D8CB;
+    }
+
+  </style>
+</head>
+
+
+<body>
+  <div id="app">
+    <div 
+      class="demo" 
+      @click="attachRwGreen = !attachRwGreen"
+      :class="divClasses"
+      ></div>
+    <div class="demo"></div>
+    <div class="demo"></div>
+  </div>
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      attachRwGreen: false
+    },
+    computed: {
+      divClasses: function() {
+        return {
+          'rw-main-green': this.attachRwGreen,
+          'rw-bright-green': !this.attachRwGreen
+        }
+      }
+    }
+  })
+</script>
+</body>
+</html>
